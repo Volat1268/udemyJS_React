@@ -32,3 +32,11 @@ const personalMoviesDB = {
     privat: false
 };
 
+let filmSeenFirstName = prompt("Один из последних просмотренных фильмов?", ""),
+    filmSeenFirstRate = prompt("На сколько оцените его?", "");
+personalMoviesDB.movies[filmSeenFirstName] = filmSeenFirstRate;
+filmSeenFirstName = prompt("Один из последних просмотренных фильмов?", "");
+filmSeenFirstRate = prompt("На сколько оцените его?", "");
+personalMoviesDB.movies[filmSeenFirstName] = filmSeenFirstRate;
+
+console.log(personalMoviesDB);
