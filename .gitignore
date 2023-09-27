@@ -25,3 +25,4 @@ yarn-error.log*
 # my files
 package.json
 package-lock.json
+.eslintrc.js
