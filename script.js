@@ -23,7 +23,7 @@
 
 "use strict";
 
-const numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?","");
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?","");
 const personalMoviesDB = {
     count: numberOfFilms,
     movies: {},
@@ -39,4 +39,13 @@ filmSeenFirstName = prompt("Один из последних просмотре�
 filmSeenFirstRate = prompt("На сколько оцените его?", "");
 personalMoviesDB.movies[filmSeenFirstName] = filmSeenFirstRate;
 
-console.log(personalMoviesDB);
+switch (numberOfFilms) {
+case 5:
+    console.log("malo very");
+    break;
+case 2:
+    console.log("tolko 2");
+    break;
+default:
+    console.log("OK");
+}
