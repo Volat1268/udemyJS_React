@@ -46,11 +46,13 @@ function thirdTask() {
 
 const data = [5, 10, 'Shopping', 20, 'Homework']
 for (let i = 0; i < data.length; i++) {
-	console.log(typeof(data[i]));
-	if (typeof(data[i] == "string")) {
-		console.log("string==");
+	if (typeof(data[i]) == "number") {
+		data[i] *= 2;
+	} else if (typeof(data[i]) == "string") {
+		data[i] += "-done"
 	}
 	}
+console.log(data)
 
 
     
