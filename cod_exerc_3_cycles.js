@@ -3,7 +3,7 @@ function firstTask() {
 	// Пишем решение вот тут
 	console.log("version 1 of task1:");
 	for (let i = 5; i <= 10; i++) {
-		console.log(i)
+		console.log(i);
 	}
 
 	console.log("\nversion 2 of task1:");
@@ -93,11 +93,12 @@ function fourthTask() {
 	// Пишем решение вот тут
 	let i = 2;
 	while(i <= 16) {
-		i++;
 		if (i % 2 === 0) {
+			i++;
 			continue;			
 		} else {
 			console.log(i);
+			i++;
 		}
 	}
 }
@@ -108,19 +109,18 @@ function fifthTask() {
 	const arrayOfNumbers = [];
 
 	// Пишем решение вот тут
-	let numb = 5;
-	for (let i = 0; i <= 5; i++) {
-		arrayOfNumbers[i] = numb;
-		numb++;
+	
+	for (let i = 5; i <= 10; i++) {
+		arrayOfNumbers[i - 5] = i;
 	}
-	console.log(arrayOfNumbers)
+	console.log(arrayOfNumbers);
 
 	// Не трогаем
 	return arrayOfNumbers;
 }
 
-// firstTask()
-// secondTask()
-// thirdTask()
-// fourthTask()
+firstTask()
+secondTask()
+thirdTask()
+fourthTask()
 fifthTask()
