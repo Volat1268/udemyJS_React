@@ -119,8 +119,8 @@ function fifthTask() {
 	return arrayOfNumbers;
 }
 
-firstTask()
-secondTask()
-thirdTask()
-fourthTask()
-fifthTask()
+firstTask();
+secondTask();
+thirdTask();
+fourthTask();
+fifthTask();
