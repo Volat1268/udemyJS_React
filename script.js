@@ -79,10 +79,10 @@ personalMoviesDB["count"] = numberOfFilms;
 for (let i = 0; i < 2; i++) {
     const filmSeenName = prompt("Один из последних просмотренных фильмов?", ""),
           filmSeenRate = prompt("На сколько оцените его?", "");
-    if (filmSeenName !== "null" && filmSeenRate !== "null" && filmSeenName !== "" && filmSeenRate !== "" && filmSeenName.length < 50) {
+    if (filmSeenName !== null && filmSeenRate !== null && filmSeenName !== "" && filmSeenRate !== "" && filmSeenName.length < 50) {
         personalMoviesDB["movies"][filmSeenName] = filmSeenRate;
-    } else {
-        i--;
+	} else {
+        i--;		
     }
 }
 
@@ -95,3 +95,4 @@ if (personalMoviesDB.count < 10) {
 }
 
 console.log(personalMoviesDB);
+

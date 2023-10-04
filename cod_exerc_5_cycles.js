@@ -24,4 +24,4 @@
 
 // console.log(result);
 
-console.log(null)
+console.log(null);
