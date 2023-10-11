@@ -11,6 +11,30 @@ getTimeFromMinutes(-150) => "Ошибка, проверьте данные"
 */
 //------------------- solution to the task 1----------------------------
 
+const getTimeFromMinutes = function(minutes) {
+	if (!Number.isInteger(minutes) || minutes < 0) {
+		return "Ошибка, проверьте данные";
+	} else {
+		let hour = Math.trunc(minutes / 60);
+		let min = minutes % 60;
+		let hourText;
+		if (hour === 0 || hour > 4) {
+			hourText = "часов";
+		} else if (hour === 1) {
+			hourText = "час";
+		} else {
+			hourText = "часа";
+		}
+		return `Это ${hour} ${hourText} и ${min} минут`;
+	}
+};
+
+console.log(getTimeFromMinutes(150));
+console.log(getTimeFromMinutes(50));
+console.log(getTimeFromMinutes(0));
+console.log(getTimeFromMinutes(-150));
+console.log(getTimeFromMinutes(600));
+console.log(getTimeFromMinutes(30.54));
 
 /*
 2) Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. Если один из аргументов не является числом или их меньше 4 - возвращается 0. Дробные числа разрешены.
