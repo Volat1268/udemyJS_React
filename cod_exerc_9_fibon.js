@@ -21,7 +21,7 @@ const fib = function(count) {
 	let response = "0 1";
 	let firstNum = 0;
 	let secondNum  = 1;
-	if (typeof(count) != "number" || count === 0) {
+	if (!Number.isInteger(count) || count === 0) {
 		return "_";
 	} else if (count === 1) {
 		return String(firstNum);
@@ -39,4 +39,4 @@ const fib = function(count) {
 	return response;	
 };
 
-console.log(fib(10));
+console.log(fib(5));
