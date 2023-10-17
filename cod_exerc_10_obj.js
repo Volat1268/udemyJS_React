@@ -18,10 +18,14 @@ showExperience(personalPlanPeter) => '1 month'
 P.S. желательно использовать деструктуризацию, но не обязательно
 */
 function showExperience(data) {
-	return data.skills.exp;
+	const {exp} = data.skills;
+	return exp;
 }
 
 console.log(showExperience(personalPlanPeter));
+
+	
+
 
 /*
 2) Напишите функцию showProgrammingLangs, которая будет принимать в себя объект со всеми данными и возвращать строку в нужном виде.
