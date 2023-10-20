@@ -16,7 +16,7 @@ function showFamily(arr) {
 	}
 }
 
-// console.log(showFamily(family));
+console.log(showFamily(family));
 /*
 2) напишите функцию standardizeStrings, которая будет принимать в себя массив строк и будет выводить в консоль эти строки в нижнем регистре.
 Пример:
@@ -43,8 +43,8 @@ const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
 // }
 
 function standardizeStrings(arr) {
-	for(let element in arr) {
-		console.log(arr[element].toUpperCase());
+	for(let element of arr) {
+		console.log(element.toLowerCase());
 	}
 }
 
