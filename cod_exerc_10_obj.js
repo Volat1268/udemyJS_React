@@ -6,10 +6,13 @@ const personalPlanPeter = {
 		programmingLangs: {
 			js: "20%",
 			php: "10%",
+			java: "25%"
 		},
 		exp: "1 month",
 	},
 };
+
+
 
 /*
 1) Напишите функцию showExperience, которая будет принимать в себя объект со всеми данными и возвращать строку с опытом.
@@ -17,14 +20,12 @@ const personalPlanPeter = {
 showExperience(personalPlanPeter) => '1 month'
 P.S. желательно использовать деструктуризацию, но не обязательно
 */
-function showExperience(data) {
-	const {exp} = data.skills;
-	return exp;
-}
+// function showExperience(data) {
+// 	const {exp} = data.skills;
+// 	return exp;
+// }
 
-console.log(showExperience(personalPlanPeter));
-
-	
+// console.log(showExperience(personalPlanPeter));
 
 
 /*
@@ -35,6 +36,16 @@ showProgrammingLangs(personalPlanPeter)  =>
 Причем функция должна работать вне зависимости от количества языков. Если ни один не указан, то возвращается пустая строка.
 P.S. Для переноса строки используется \n в конце строки.
 */
+
+function showProgrammingLangs(data) {
+	const {programmingLangs} = data.skills;
+	let response = "";
+	for (let key in programmingLangs) {
+		response += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+	}
+	return response;
+}
+console.log(showProgrammingLangs(personalPlanPeter));
 
 /*
 3) Создайте метод showAgeAndLangs внутри объекта personalPlanPeter. При его вызове метод будет принимать в себя объект и возвращать строку в нужном виде.
