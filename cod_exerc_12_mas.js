@@ -56,10 +56,6 @@ RUB
 - Данные для первого аргумента должны приходить сразу из двух банков, причем сначала baseCurrencies, потом additionalCurrencies по порядку
 */
 
-const baseCurrencies = ["USD", "EUR"];
-const additionalCurrencies = ["UAH", "RUB", "CNY"];
-
-const allAvailableCurr = baseCurrencies.concat(additionalCurrencies);
 
 // function availableCurr(base, additional) {
 // 	if (base.length === 0) {
@@ -67,22 +63,45 @@ const allAvailableCurr = baseCurrencies.concat(additionalCurrencies);
 // 	}
 // 	let result = "Доступные валюты:\n";
 // 	for(let value of base) {
-// 		if (value !== additional) {
-// 			result += `${value}\n`;
+	// 		if (value !== additional) {
+		// 			result += `${value}\n`;
 // 		}
 // 	}
 // 	return result;
 // }
 
+// function availableCurr(base, additional) {
+// 	let result = ["Доступные валюты:"];
+// 	base.forEach(function(item) {
+// 		if (item !== additional) {
+// 			result.push(item);
+// 		}
+// 	});
+// 	let curResult = result.join("\n");
+// 	return curResult;
+// }
+
+// console.log(availableCurr(allAvailableCurr, "CNY"));
+
+
+const baseCurrencies = ["USD", "EUR"];
+const additionalCurrencies = ["UAH", "RUB", "CNY"];
+
+const allAvailableCurr = [...baseCurrencies, ...additionalCurrencies];
+
 function availableCurr(base, additional) {
-	let result = ["Доступные валюты:"];
-	base.forEach(function(item) {
-		if (item !== additional) {
-			result.push(item);
+	if (base.length === 0) {
+		return "Нет доступных валют";
+	}
+	let text = ["Доступные валюты:\n"];
+	base.forEach(function(value) {
+		if (value !== additional) {
+			text.push(value);
 		}
 	});
-	let curResult = result.join("\n");
-	return curResult;
+	let responce = text.join("\n");
+	return responce;
 }
 
-console.log(availableCurr(allAvailableCurr, "CNY"));
+console.log(availableCurr(allAvailableCurr, "RUB"));
+
