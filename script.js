@@ -223,79 +223,77 @@ showMyDB(personalMoviesDB.privat);
 
 // ------------------------- Part 4. Solution ---------------------------------
 // __________solution task 1_______________
-let numberOfFilms;
 
 const personalMoviesDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false,
-  start: function () {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели", "");
-    while (
-      numberOfFilms == "" ||
-      numberOfFilms == null ||
-      isNaN(numberOfFilms)
-    ) {
-      numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели", "");
-    }
-    personalMoviesDB["count"] = numberOfFilms;
-  },
-  rememberMyFilms: function () {
-    for (let i = 0; i < 2; i++) {
-      const filmSeenName = prompt(
-          "Один из последних просмотренных фильмов?",
-          ""
-        ),
-        filmSeenRate = prompt("На сколько оцените его?", "");
-      if (
-        filmSeenName !== null &&
+	count: 0,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
+	start: function () {
+		personalMoviesDB.count = +prompt("Сколько фильмов вы уже посмотрели", "");
+		while (
+			personalMoviesDB.count == "" ||
+      personalMoviesDB.count == null ||
+      isNaN(personalMoviesDB.count)
+		) {
+			personalMoviesDB.count = +prompt("Сколько фильмов вы уже посмотрели", "");
+		}
+	},
+	rememberMyFilms: function () {
+		for (let i = 0; i < 2; i++) {
+			const filmSeenName = prompt(
+					"Один из последних просмотренных фильмов?",
+					""
+				),
+				filmSeenRate = prompt("На сколько оцените его?", "");
+			if (
+				filmSeenName !== null &&
         filmSeenRate !== null &&
         filmSeenName !== "" &&
         filmSeenRate !== "" &&
         filmSeenName.length < 50
-      ) {
-        personalMoviesDB["movies"][filmSeenName] = filmSeenRate;
-      } else {
-        i--;
-      }
-    }
-  },
-  writeYourGenres: function () {
-    for (let i = 0; i < 3; i++) {
-      let yourGenre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, "");
-      while (yourGenre == "" || yourGenre == null) {
-        yourGenre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, "");
-      }
-      personalMoviesDB["genres"][i] = yourGenre;
-    }
-    const {genres} = personalMoviesDB.genres;
-    let counter = 1; 
-    genres.forEach(function(item) {
-      console.log(`Любимый жанр № ${counter} - это ${item}`);
-      counter ++;
-    });
-  },
-  detectPersonalLevel: function () {
-    if (personalMoviesDB.count < 10) {
-      alert("Просмотрено довольно мало фильмов");
-    } else if (personalMoviesDB.count >= 10 && personalMoviesDB.count <= 30) {
-      alert("Вы классический зритель");
-    } else {
-      alert("Вы киноман");
-    }
-  },
-  toggleVisibleMyDB: function() {
-    if (personalMoviesDB.privat === true) {
-      personalMoviesDB.privat = false;
-    } else {
-      personalMoviesDB.privat = true;
-    }
-    console.log(`my privat: ${personalMoviesDB.privat}`);
-  }
-  
-};
+			) {
+				personalMoviesDB["movies"][filmSeenName] = filmSeenRate;
+			} else {
+				i--;
+			}
+		}
+	},
+	writeYourGenres: function () {
+		for (let i = 0; i < 3; i++) {
+			let yourGenre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, "");
+			while (yourGenre == "" || yourGenre == null) {
+				yourGenre = prompt(`Ваш любимый жанр под номером ${i + 1}?`, "");
+			}
+			personalMoviesDB["genres"][i] = yourGenre;
+		}
+		const {genres} = personalMoviesDB;
+		genres.forEach(function(item, index) {
+			console.log(`Любимый жанр № ${index + 1} - это ${item}`);
 
-personalMoviesDB.writeYourGenres();
+		});
+	},
+	detectPersonalLevel: function () {
+		if (personalMoviesDB.count < 10) {
+			alert("Просмотрено довольно мало фильмов");
+		} else if (personalMoviesDB.count >= 10 && personalMoviesDB.count <= 30) {
+			alert("Вы классический зритель");
+		} else {
+			alert("Вы киноман");
+		}
+	},
+	toggleVisibleMyDB: function() {
+		if (personalMoviesDB.privat) {
+			personalMoviesDB.privat = false;
+		} else {
+			personalMoviesDB.privat = true;
+		}
+	},
+	showMyDB: function (hidden) {
+		if (!hidden) {
+			console.log(personalMoviesDB);
+		}
+	}
+};
 
