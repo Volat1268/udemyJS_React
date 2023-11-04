@@ -25,5 +25,14 @@
 
 // writeYourGenres();
 
+const personalMoviesDB = {
+	count: 0,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false
+};
 
+const {genres, count, privat} = personalMoviesDB;
+console.log(genres, count, privat);
 

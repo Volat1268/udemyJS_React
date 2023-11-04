@@ -271,7 +271,6 @@ const personalMoviesDB = {
 		const {genres} = personalMoviesDB;
 		genres.forEach(function(item, index) {
 			console.log(`Любимый жанр № ${index + 1} - это ${item}`);
-
 		});
 	},
 	detectPersonalLevel: function () {
@@ -294,6 +293,12 @@ const personalMoviesDB = {
 		if (!hidden) {
 			console.log(personalMoviesDB);
 		}
+	},
+	writeGenres: function() {
+		let {genres} = personalMoviesDB;
+		genres = prompt("Напишите три любимых жанра через запятую", "").toLowerCase().split(",");
+		genres.forEach((item, index) => {
+			console.log(`Your genre ${index}: ${item}`);
+		});
 	}
 };
-
