@@ -39,19 +39,22 @@ const shoppingMallData = {
 	height: 5,
 	moneyPer1m3: 30,
 	budget: 50000
-}
+};
 
 function isBudgetEnough(data) {
-  // const {shops} = shoppingMallData;  
-	// const squareAllshops;
-
+	const {shops} = data;
+	let squareAllShops = 0;
+	shops.forEach((item) => {
+		let squareOneShop = item.width * item.length;
+		squareAllShops += squareOneShop;	
+	});
+	let volumAllShops = squareAllShops * data.height;
+	if (volumAllShops * data.moneyPer1m3 > data.budget) {
+		return "Бюджета недостаточно.";
+	} else {
+		return "Бюджета достаточно.";
+	}
 }
 
-const {shops} = shoppingMallData;
-let square = 0;
-shops.forEach((item) => {
-	let squareOneshop = item.width * item.length;
-	square += squareOneshop;
-	console.log(squareOneshop, square);
-});
+console.log(isBudgetEnough(shoppingMallData));
 
