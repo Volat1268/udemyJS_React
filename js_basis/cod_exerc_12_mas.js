@@ -15,11 +15,11 @@ reverse(someString) => 'gnirts egnarts emos si sihT'
 const someString = "This is some strange string";
 
 function reverse(str) {
-  let reversedString = "";
-  for(let letter of str) {
-    reversedString = letter + reversedString;
-  }
-  return reversedString;
+	let reversedString = "";
+	for(let letter of str) {
+		reversedString = letter + reversedString;
+	}
+	return reversedString;
 }
 
 console.log(reverse(someString));
@@ -90,17 +90,17 @@ const additionalCurrencies = ["UAH", "RUB", "CNY"];
 const allAvailableCurr = [...baseCurrencies, ...additionalCurrencies];
 
 function availableCurr(base, additional) {
-  if (base.length === 0) {
-    return "Нет доступных валют";
-  }
-  let text = ["Доступные валюты:\n"];
-  base.forEach(function(value) {
-    if (value !== additional) {
-      text.push(value);
-    }
-  });
-  let responce = text.join("\n");
-  return responce;
+	if (base.length === 0) {
+		return "Нет доступных валют";
+	}
+	let text = ["Доступные валюты:\n"];
+	base.forEach(function(value) {
+		if (value !== additional) {
+			text.push(value);
+		}
+	});
+	let responce = text.join("\n");
+	return responce;
 }
 
 console.log(availableCurr(allAvailableCurr, "RUB"));
