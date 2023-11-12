@@ -6,12 +6,13 @@ const box = document.getElementById("box"),
 			buttons = document.getElementsByTagName("button"), 
 			oneHeart = document.querySelector(".heart"), 
 			newDiv = document.createElement("newDiv");
-box.style.backgroundColor = "green";
-box.style.width = "100px";
-buttons[2].style.borderRadius = "100%";
-buttons[0].style.cssText = "background-color: red; border-radius: 30px; width: 120px; color: black";
 
-for(let i = 0; i < circles.length; i++) {
-	circles[i].style.backgroundColor = "yellow";
+box.style.background = "green";
+circles[0].style.cssText = "background-color: red; width: 100px; height: 100px";
+for (let i = 0; i < hearts.length; i++) {
+	hearts[i].style.width = "200px";
 }
 
+for (let i = 0; i < buttons.length; i++) {
+	buttons[i].style.cssText = "width: 30px; border-radius: 100%; color: red";
+}
