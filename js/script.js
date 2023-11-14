@@ -1,18 +1,23 @@
 "use strict";
 
 const box = document.getElementById("box"), 
-			circles = document.getElementsByClassName("circle"), 
+			circles = document.querySelectorAll(".circle"), 
 			hearts = document.querySelectorAll(".heart"), 
 			buttons = document.getElementsByTagName("button"), 
-			oneHeart = document.querySelector(".heart"), 
-			newDiv = document.createElement("newDiv");
+			oneHeart = document.querySelector(".heart");
 
-box.style.background = "green";
-circles[0].style.cssText = "background-color: red; width: 100px; height: 100px";
-for (let i = 0; i < hearts.length; i++) {
-	hearts[i].style.width = "200px";
-}
+box.style.background = "blue";
+circles[0].style.background = "red";
+hearts[1].style.background = "green";
 
-for (let i = 0; i < buttons.length; i++) {
-	buttons[i].style.cssText = "width: 30px; border-radius: 100%; color: red";
-}
+// for (let i = 0; i < circles.length; i++) {
+// 	circles[i].style.width = "120px";
+// };
+
+hearts.forEach(item => {
+	item.style.background = "blue";
+});
+
+circles.forEach(item => {
+	item.style.cssText = "background-color: red; width: 120px";
+});
