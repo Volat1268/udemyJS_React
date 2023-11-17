@@ -4,20 +4,14 @@ const box = document.getElementById("box"),
 			circles = document.querySelectorAll(".circle"), 
 			hearts = document.querySelectorAll(".heart"), 
 			buttons = document.getElementsByTagName("button"), 
-			oneHeart = document.querySelector(".heart");
+			oneHeart = document.querySelector(".heart"),
+			wrapper = document.querySelector(".wrapper");
+			
 
-box.style.background = "blue";
-circles[0].style.background = "red";
-hearts[1].style.background = "green";
-
-// for (let i = 0; i < circles.length; i++) {
-// 	circles[i].style.width = "120px";
-// };
-
-hearts.forEach(item => {
-	item.style.background = "blue";
-});
-
-circles.forEach(item => {
-	item.style.cssText = "background-color: red; width: 120px";
-});
+const newDiv = document.createElement("div");
+newDiv.classList.add("black");
+wrapper.append(newDiv);
+newDiv.style.cssText = "width: 300px; height: 300px";
+newDiv.innerHTML = "<h1>Hello, World!</h1>";
+newDiv.insertAdjacentHTML("afterbegin", "<h2>It's me!</h2>");
+newDiv.insertAdjacentHTML("beforeend", "<h2>This is the end!</h2>");
