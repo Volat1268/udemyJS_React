@@ -23,13 +23,22 @@ const movieDB = {
 	]
 };
 
-const promo_adv = document.querySelector(".promo__adv");
+const promo_adv = document.querySelectorAll(".promo__adv img");
 console.log(promo_adv);
-promo_adv.remove();
+promo_adv.forEach(item => {
+	item.remove();
+});
 
-const promo_genre = document.querySelector(".promo__genre");
-console.log(promo_genre);
-promo_genre.textContent = "драма";
+const poster = document.querySelector(".promo__bg");
+console.log(poster);
+poster.style.backgroundImage = "url('img/bg.jpg')";
+
+// const genre = poster.querySelector(".promo__genre");
+// genre.textContent = "драма";
+
+
+
+
 
 
 
