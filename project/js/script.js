@@ -23,18 +23,48 @@ const movieDB = {
 	]
 };
 
-const promo_adv = document.querySelectorAll(".promo__adv img");
-console.log(promo_adv);
-promo_adv.forEach(item => {
+const promoAdv = document.querySelector(".promo__adv");
+console.log(promoAdv);
+
+const promoImg = promoAdv.querySelectorAll("img");
+console.log(promoImg);
+promoImg.forEach(item => {
 	item.remove();
 });
 
-const poster = document.querySelector(".promo__bg");
-console.log(poster);
-poster.style.backgroundImage = "url('img/bg.jpg')";
+const promoTitle = promoAdv.querySelector(".promo__adv-title");
+promoTitle.textContent = "Рекламы больше нет";
 
-// const genre = poster.querySelector(".promo__genre");
-// genre.textContent = "драма";
+const promoContent = document.querySelector(".promo__content");
+console.log(promoContent);
+
+const promoBg = promoContent.querySelector(".promo__bg");
+console.log(promoBg);
+promoBg.style.background = "url('./img/bg.jpg')";
+
+promoContent.querySelector(".promo__genre").textContent = "драма";
+
+promoContent.getElementsByClassName("promo__title")[0].textContent = "Marsianin";
+
+const ratings = promoContent.querySelectorAll(".promo__ratings span");
+ratings[0].textContent = "IMDb: 99.0";
+ratings[1].textContent = "Кинопоиск: 9.9";
+
+const {movies} = movieDB;
+const moviesSorted = movies.sort()
+console.log(moviesSorted);
+
+const moviesList = document.querySelector(".promo__interactive ul");
+console.log(moviesList);
+moviesList.textContent = "";
+
+moviesSorted.forEach(function (value, index) {
+	moviesList.innerHTML += `<li class="promo__interactive-item">${index + 1} ${value}<div class="delete"></div></li>`;
+});
+
+const logo = document.querySelector(".header__logo");
+logo.innerHTML = "<img src='icons/star.svg' alt='logo'>";
+console.log(logo);
 
 
 
