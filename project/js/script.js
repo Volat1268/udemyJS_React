@@ -51,7 +51,7 @@ ratings[0].textContent = "IMDb: 99.0";
 ratings[1].textContent = "Кинопоиск: 9.9";
 
 const {movies} = movieDB;
-const moviesSorted = movies.sort()
+const moviesSorted = movies.sort();
 console.log(moviesSorted);
 
 const moviesList = document.querySelector(".promo__interactive ul");

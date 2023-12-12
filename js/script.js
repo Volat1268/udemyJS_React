@@ -1,11 +1,11 @@
 "use strict";
 
 const box = document.getElementById("box"), 
-			circles = document.querySelectorAll(".circle"), 
-			hearts = document.querySelectorAll(".heart"), 
-			buttons = document.getElementsByTagName("button"), 
-			oneHeart = document.querySelector(".heart"),
-			wrapper = document.querySelector(".wrapper");
+	circles = document.querySelectorAll(".circle"), 
+	hearts = document.querySelectorAll(".heart"), 
+	buttons = document.getElementsByTagName("button"), 
+	oneHeart = document.querySelector(".heart"),
+	wrapper = document.querySelector(".wrapper");
 			
 
 const newDiv = document.createElement("div");
