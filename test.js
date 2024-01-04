@@ -1,23 +1,21 @@
 "use strict";
 
-const family = ["Peter", "Ann", "Alex", "Linda"];
+// const auto = {
+// 	price: 500,
+// 	wheels: 4,
+// 	driving: 1,
+// 	sound: "wow",
+// 	slogan: function() {
+// 		console.log("I go home!");
+// 	}
+// };
 
-function showFamily(arr) {
-	if (arr.length == 0) {
-		return "Семья пуста";
-	} else {
-		return `Семья состоит из: ${arr.join(" ")}`;
-	}
-}
+// const audi = {
+// 	colour: "red"
+// };
 
-const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
-
-function standardizeStrings(arr) {
-	arr.forEach((value) => {
-		console.log(value.toLowerCase());
-	});
-}
+// const renoult = {};
 
 
-console.log(showFamily(family));
-standardizeStrings(favoriteCities);
+
+
