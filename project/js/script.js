@@ -35,7 +35,12 @@ promoAdv.remove();
 
 const promoGenre = document.querySelector(".promo__genre");
 console.log(promoGenre);
-promoGenre.innerHTML = "DRAMA"
+promoGenre.innerHTML = "DRAMA";
+
+const poster = document.querySelector(".promo__bg");
+console.log(poster);
+poster.style.backgroundImage = "url(\"img/bg.jpg\")";
+
 
 
 
